@@ -25,6 +25,6 @@
 	$(document).ready(function(){
 		$(".field-upload, .selectable, .field-uniqueupload").find("a").map(function(){
 			if (this.href.match(/\.(?:bmp|gif|jpe?g|png)$/i)) return this;
-		}).attr("rel", "gallery").quickPreview();
+		}).quickPreview();
 	});
 })(jQuery);
