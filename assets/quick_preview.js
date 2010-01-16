@@ -30,7 +30,7 @@
 		{
 			t = $(window).scrollTop();
 		}
-		else if( s < 0 )
+		else if( s < $(window).scrollTop() )
 		{
 			t = $(window).scrollTop();
 		}
