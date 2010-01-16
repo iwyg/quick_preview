@@ -25,3 +25,12 @@ Version 0.1
 Version 0.2
 
 - Corrected positioning
+
+Version 0.3
+
+- Code optimizations
+
+Version 0.4
+
+- Added position:fixed for easier y positioning
+- css & js tweaks

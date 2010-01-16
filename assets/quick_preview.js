@@ -2,12 +2,11 @@
 	$.fn.quickPreview = function(){
 		xOffset = 20;
 		this.hover(function(e){
-			$("body").append("<p id='quick-preview'><img src='"+ this.href +"' alt='Quick Preview' /></p>");
-			
-			s = e.pageY - $("#quick-preview").height() / 2 + $(window).scrollTop();
+			$("body").append("<div id='quick-preview'><img src='"+ this.href +"' alt='Quick Preview' /></div>");
 			
 			$("#quick-preview")
-				.css("top", evalTop( s ))
+				.css("position", "fixed")
+				.css("top", evalTop( e.pageY ))
 				.css("left",(e.pageX + xOffset) + "px")
 				.fadeIn("fast");
 		},
@@ -15,32 +14,26 @@
 			$("#quick-preview").remove();
 		});
 		this.mousemove(function(e){
-			s = e.pageY - $("#quick-preview").height() / 2 + $(window).scrollTop();
-				
 			$("#quick-preview")
-				.css("top",( evalTop( s ) ) + "px")
+				.css("top",( evalTop( e.pageY ) ) + "px")
 				.css("left",(e.pageX + xOffset) + "px");
 		});
 		return this;
 	};
 	
-	function evalTop( s ){
+	function evalTop( u ){
+		s = u - $(window).scrollTop() - $("#quick-preview").height() / 2;
+		qh = $("#quick-preview").height();
+		wh = $(window).height();
 		var t;
-		if( $(window).height() < $("#quick-preview").height() )
-		{
-			t = $(window).scrollTop();
-		}
-		else if( s < $(window).scrollTop() )
-		{
-			t = $(window).scrollTop();
-		}
-		else if ( s + $("#quick-preview").height() > $(window).scrollTop() + $(window).height() - 12 )
-		{
-			t = $(window).scrollTop() + $(window).height() - $("#quick-preview").height() - 12;
-		}
-		else
-		{
-			t = s;
+		if( wh < qh ) {
+			t = 0
+		} else if( s < 0 ) {
+			t = 0
+		} else if ( s + qh > wh - 12 ) {
+			t = wh - qh - 12
+		} else {
+			t = s
 		}
 		return t;
 	}

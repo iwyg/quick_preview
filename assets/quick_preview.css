@@ -1,8 +1,9 @@
 #quick-preview {
 	position: absolute;
-	border: 1px solid #ccc;
-	background: #333;
-	padding: 5px;
+	border: 6px solid #333;
 	display: none;
 	z-index: 9999;
+}
+#quick-preview img {
+	display: block;
 }
