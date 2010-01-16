@@ -21,3 +21,7 @@ A simple extension that adds quick roll-over image preview in Symphony's backend
 Version 0.1
 
 - Initial release
+
+Version 0.2
+
+- Corrected positioning
