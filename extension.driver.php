@@ -6,7 +6,7 @@
 		{
 			return array(
 				'name' => 'Quick Preview',
-				'version' => '0.1',
+				'version' => '0.5',
 				'release-date' => '2010-01-16',
 				'author' => array(
 						'name' => 'Grzegorz Michlicki',
