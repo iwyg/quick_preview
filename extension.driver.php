@@ -6,7 +6,7 @@
 		{
 			return array(
 				'name' => 'Quick Preview',
-				'version' => '0.5',
+				'version' => '0.6',
 				'release-date' => '2010-01-16',
 				'author' => array(
 						'name' => 'Grzegorz Michlicki',
@@ -22,14 +22,14 @@
 				array(
 					'page' => '/administration/',
 					'delegate' => 'AdminPagePreGenerate',
-					'callback' => 'appendAssets'
+					'callback' => '__appendAssets'
 				)
 			);
 		}
 		
-		public function appendAssets($context)
+		public function __appendAssets($context)
 		{
-			$callback = Administration::instance()->getPageCallback();
+			$callback = $this->_Parent->getPageCallback();
 			
 			if ($callback['driver'] == 'publish' && ($callback['context']['page'] == 'index' || $callback['context']['page'] == 'edit'))
 			{

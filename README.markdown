@@ -6,7 +6,7 @@ A simple extension that adds quick roll-over image preview in Symphony's backend
 - Version: 0.5
 - Author: Grzegorz Michlicki <grzegorz@michlicki.pl>
 - Build Date: 2010-01-16
-- Requirements: Symphony 2.0.2
+- Requirements: Symphony 2.0.6
 
 ## Installation
 
@@ -40,3 +40,7 @@ Version 0.5
 - Added image preloading
 - Added image size info that disappers after 3 seconds
 - Smart x positioning
+
+Version 0.6
+
+- Resolved issue with CacheLite extension
