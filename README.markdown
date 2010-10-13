@@ -3,7 +3,7 @@ Quick Preview extension for Symphony 2
 
 A simple extension that adds quick roll-over image preview in Symphony's backend.
 
-- Version: 0.5
+- Version: 0.6
 - Author: Grzegorz Michlicki <grzegorz@michlicki.pl>
 - Build Date: 2010-01-16
 - Requirements: Symphony 2.0.6
