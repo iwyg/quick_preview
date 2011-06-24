@@ -96,10 +96,9 @@
 			var target = $([e.target, e.target.parentNode]).filter(function(){
 				return !!this.href && this;
 			})[0];
-			if (target && target.href.match(/\.(?:bmp|gif|jpe?g|png)$/i)) {
-				return this.showPreview.call(this,e, target.href);
-			} 
-			return false;
+			if (target.href.match(/\.(?:bmp|gif|jpe?g|png)$/i)) {
+				this.showPreview.call(this,e, target.href);
+			}
 		}
 	}
 	
